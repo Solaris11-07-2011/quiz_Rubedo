@@ -24,6 +24,7 @@
 			font-size: 18px;/*16px pour les réponses*/
 			width: 680px;
 			height: 680px;
+			overflow: hidden;
 		}
 		
 		body::-webkit-scrollbar{
@@ -47,6 +48,7 @@
 			place-items: center;
 			
 			font-family: "abo";
+			letter-spacing: 1px;
 			font-size: 22px;
 			font-weight: 1000;
 		}
@@ -58,7 +60,7 @@
 			text-align: center;
 			
 			font-family: "neue"!important;
-			font-size: 18!important;
+			font-size: 18px!important;
 		}
 		
 		.boutton1{
@@ -113,10 +115,41 @@
 		}
 		
 		#question{
-			font-family: "abo";
+			font-family: "abo";			
+			letter-spacing: 1px;
 			font-size: 22px;
 			font-weight: 1000;
 			color: #ff0020;
+			text-align: center;
+			line-height: 35px;
+		}
+		
+		#commencer{
+			font-family: "abo";			
+			letter-spacing: 1px;
+			font-size: 22px;
+			font-weight: 1000;
+			color: #ff0020;
+		}
+		
+		#proQ{
+			font-family: "abo";			
+			letter-spacing: 1px;
+			font-size: 22px;
+			font-weight: 1000;
+			color: #ff0020;
+		}
+		
+		#resultat{
+			font-family: "abo";			
+			letter-spacing: 1px;
+			font-size: 22px;
+			font-weight: 1000;
+			color: #ff0020;
+		}
+		
+		#dessous{
+			
 		}
 	</style>
 </head>
@@ -124,7 +157,7 @@
 	<div id="accueil">
 		<div class="centre">
 			<div class="flexH">
-				<div style="margin-top: 150px"></div>
+				<div style="margin-top: 0px"></div>
 				<div class="boutton boutton1" id="commencer" style="margin-top: 0px"><div>COMMENCER LE QUIZ</div></div>
 			</div>
 		</div>
@@ -139,14 +172,15 @@
 			<div class="boutton boutton2 quiz" id="deux"></div>
 			<div class="boutton boutton3 quiz" id="trois"></div>
 			<div class="boutton boutton4 quiz" id="quattre"></div>
-			<div  id="proQ" style="position:fixed; bottom: 50px">PROCHAINE QUESTION</div>
+			<div  id="proQ" style="position:fixed; bottom: 50px;">PROCHAINE QUESTION</div>
 		</div>
 	</div>
 	
 	<div id="score" style="display: none">
 		<div class="centre">
 			<div class="flexH">
-				<div id="resultat" style="margin-top:200px">X/10 réponses justes</div>
+				<div id="resultat" style="margin-top:200px">X/10</div><br>
+				<div id="dessous"></div>
 				<div class="boutton boutton1" id="nouveau" style="margin-top:50px; cursor: pointer">FAIRE UN NOUVEAU QUIZ</div>
 			</div>
 		</div>
@@ -163,7 +197,7 @@
 		
 	let question = [
 		{Q:"D’où vient le mot « alchimie » ?", RC:"De l’arabe « al-kīmiyā » (l’art de la transformation", RI1:"De l’arabe « al-kīmiyā » (l’art de la transformation", RI2:"Du latin « alchimus » (la matière parfaite)", RI3:"Du grec « alchemos » (le mélange des éléments)", RI4:"Du sanskrit « alakīmya » (la connaissance cachée)"},
-		{Q:"Quel élément est souvent associé à la transformation en alchimi  ?", RC:"Le feu", RI1:"Le feu", RI2:"L’air", RI3:"L’eau", RI4:"La terre"},
+		{Q:"Quel élément est souvent associé à la transformation en alchimie ?", RC:"Le feu", RI1:"Le feu", RI2:"L’air", RI3:"L’eau", RI4:"La terre"},
 		{Q:"Quel métal est associé à la Lune ?", RC:"Argent", RI1:"Argent", RI2:"Fer", RI3:"Cuivre", RI4:"Plomb"},
 		{Q:"Que représente le Mercure en alchimie ?", RC:"La transformation et le lien", RI1:"La transformation et le lien", RI2:"La solidité", RI3:"La destruction", RI4:"La matière brute"},
 		{Q:"Quelle étape du Grand Œuvre est associée à la purification ?", RC:"Albedo", RI1:"Albedo", RI2:"Nigredo", RI3:"Citrinitas", RI4:"Rubedo"},
@@ -231,7 +265,7 @@
 		let niveau = 0;
 		let ids = ["un","deux","trois","quattre"]
 		let nbJuste = 0
-		
+		let mes = ""
 		
 		
 		function chargerQ(index){
@@ -240,13 +274,41 @@
 			if(niveau === 10){
 				document.getElementById("jeu").style.display = "none"
 				document.getElementById("score").style.display = "flex"
-				document.getElementById("resultat").innerText = nbJuste + "/10 réponses justes"
+				document.getElementById("resultat").innerText = nbJuste + "/10"
+				
+				switch(nbJuste){
+					case 0:mes="L’Œuvre n’a pas encore commencé.";
+						break;
+					case 1:mes="Une étincelle apparaît, mais tout reste à découvrir.";
+						break;
+					case 2:mes="Les premières matières sont encore instables.";
+						break;
+					case 3:mes="Tu entres dans l’Œuvre, mais le chemin est long.";
+						break;
+					case 4:mes="Quelques équilibres se dessinent.";
+						break;
+					case 5:mes="Tu progresses, mais l’Œuvre demande encore de la justesse.";
+						break;
+					case 6:mes="Les fondations sont posées, la transformation s’engage.";
+						break;
+					case 7:mes="L’Œuvre prend forme, l’équilibre se laisse entrevoir.";
+						break;
+					case 8:mes="Tu approches d’un état maîtrisé.";
+						break;
+					case 9:mes="La Pierre Philosophale est à portée de main.";
+						break;
+					case 10:mes="Félicitation, l’Œuvre est accomplie.";
+						break;
+				}
+				
+				document.getElementById("dessous").innerText = mes
 				
 				return;
 			}
 			
 			let ordre = get4UniqueNumbers(4)
 			let actuel = question[Arr[index]]
+			clique = false
 			
 			document.getElementById("proQ").style.display = "none"
 			console.log(ordre)
@@ -287,10 +349,13 @@
 			niveau++
 		}
 		
-		
+		let clique = false
 		
 		document.querySelectorAll(".quiz").forEach(el => {
   el.addEventListener("click", function(event) {
+					if(clique){
+					return;
+					}
 
     const clicked = event.currentTarget;
     const clickedT = event.target.closest("div");
@@ -302,6 +367,9 @@
     // reset visuel (important)
 	  
     document.querySelectorAll(".quiz").forEach(q => {
+					
+					
+					
       q.classList.remove(
         "bouttonV1","bouttonV2","bouttonV3","bouttonV4",
         "bouttonR1","bouttonR2","bouttonR3","bouttonR4"
@@ -310,9 +378,11 @@
 	  document.getElementById("proQ").style.display = "flex"
 	  console.log(isCorrect)
 	  console.log(clickedT.dataset.correct)
+					clique = true
 
     // si bonne réponse
     if (isCorrect) {
+					
 nbJuste++
       if (clicked.classList.contains("boutton1")) clicked.classList.add("bouttonV1");
       else if (clicked.classList.contains("boutton2")) clicked.classList.add("bouttonV2");
