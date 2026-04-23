@@ -39,9 +39,9 @@
 		}
 		
 		.boutton{
-			width: 500px;
-			height: calc(125000px/1200);
-			background-size: contain;
+			width: 600px;
+			height: 60px;
+			background-size: cover;
 			background-repeat: no-repeat;
 			cursor: pointer;
 			display: grid;
@@ -59,7 +59,7 @@
 			justify-content: center;
 			text-align: center;
 			
-			font-family: "neue"!important;
+			font-family: "neue";
 			font-size: 18px!important;
 		}
 		
@@ -122,10 +122,12 @@
 			color: #ff0020;
 			text-align: center;
 			line-height: 35px;
+			margin-left: 40px;
+			margin-right: 40px;
 		}
 		
-		#commencer{
-			font-family: "abo";			
+		#commencer > div{
+			font-family: "abo"!important;			
 			letter-spacing: 1px;
 			font-size: 22px;
 			font-weight: 1000;
@@ -164,7 +166,7 @@
 	</div>
 	
 	<div id="jeu" style="height: 680px; width: 680px; display: none; position: absolute; flex-direction: column; align-items: center">
-		<div class="flexH" style="position: absolute; bottom:125px">
+		<div class="flexH" style="position: absolute; top:0px">
 			
 			<div id="question" style="margin-bottom: 50px;"></div>
 			
@@ -172,7 +174,7 @@
 			<div class="boutton boutton2 quiz" id="deux"></div>
 			<div class="boutton boutton3 quiz" id="trois"></div>
 			<div class="boutton boutton4 quiz" id="quattre"></div>
-			<div  id="proQ" style="position:fixed; bottom: 50px;">PROCHAINE QUESTION</div>
+			<div  id="proQ" style="position:fixed; bottom: 260px; cursor: pointer">PROCHAINE QUESTION</div>
 		</div>
 	</div>
 	
