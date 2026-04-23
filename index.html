@@ -5,14 +5,19 @@
 <title>Document sans nom</title>
 	<style>
 		@font-face{
-			font-family: "has";
-	        src:url("./AlteHaasGroteskRegular.ttf")
+			font-family: "neue";
+	        src:url("./NeueHaasDisplayMediu.ttf")
+		}
+		
+		@font-face{
+			font-family: "abo";
+			src: url("Aboreto-Regular.ttf")				
 		}
 		body{
 			-webkit-user-select: none;
   			-ms-user-select: none;
   			user-select: none;
-			font-family: "has";
+			font-family: "neue";
 			background:transparent /*transparent*/;
 			margin: 0;
 			color: white;
@@ -40,6 +45,10 @@
 			cursor: pointer;
 			display: grid;
 			place-items: center;
+			
+			font-family: "abo";
+			font-size: 22px;
+			font-weight: 1000;
 		}
 		
 		.boutton > div{
@@ -47,6 +56,9 @@
 			
 			justify-content: center;
 			text-align: center;
+			
+			font-family: "neue"!important;
+			font-size: 18!important;
 		}
 		
 		.boutton1{
@@ -99,6 +111,13 @@
 			height: 100%;
 			width: 100%;
 		}
+		
+		#question{
+			font-family: "abo";
+			font-size: 22px;
+			font-weight: 1000;
+			color: #ff0020;
+		}
 	</style>
 </head>
 <body>
@@ -114,7 +133,7 @@
 	<div id="jeu" style="height: 680px; width: 680px; display: none; position: absolute; flex-direction: column; align-items: center">
 		<div class="flexH" style="position: absolute; bottom:125px">
 			
-			<div id="question" style="margin-bottom: 50px"></div>
+			<div id="question" style="margin-bottom: 50px;"></div>
 			
 			<div class="boutton boutton1 quiz" id="un"></div>
 			<div class="boutton boutton2 quiz" id="deux"></div>
@@ -128,7 +147,7 @@
 		<div class="centre">
 			<div class="flexH">
 				<div id="resultat" style="margin-top:200px">X/10 réponses justes</div>
-				<div class="boutton boutton1" id="nouveau" style="margin-top:50px">FAIRE UN NOUVEAU QUIZ</div>
+				<div class="boutton boutton1" id="nouveau" style="margin-top:50px; cursor: pointer">FAIRE UN NOUVEAU QUIZ</div>
 			</div>
 		</div>
 	</div>
