@@ -78,35 +78,35 @@
 		
 		
 		.bouttonR1 > div{
-			/*
+			
 			text-decoration: line-through;
 			text-decoration-thickness: 3px;
-  			text-decoration-color: #ff0020;
-			*/
+  			text-decoration-color: white;
+			
 			color: #ff0020;
 		}
 		.bouttonR2 > div{
-			/*
+			
 			text-decoration: line-through;
 			text-decoration-thickness: 3px;
-  			text-decoration-color: #ff0020;
-			*/
+  			text-decoration-color: white;
+			
 			color: #ff0020;
 		}
 		.bouttonR3 > div{
-			/*
+			
 			text-decoration: line-through;
 			text-decoration-thickness: 3px;
-  			text-decoration-color: #ff0020;
-			*/
+  			text-decoration-color: white;
+			
 			color: #ff0020;
 		}
 		.bouttonR4 > div{
-			/*
+			
 			text-decoration: line-through;
 			text-decoration-thickness: 3px;
-  			text-decoration-color: #ff0020;
-			*/
+  			text-decoration-color: white;
+			
 			color: #ff0020;
 		}
 		
@@ -470,6 +470,37 @@ nbJuste++
 		
 		document.getElementById("nouveau").addEventListener("click",menu)
 	
+					
+					
+					
+					
+					
+					function preloadGameImages(){
+
+  var imgs = [
+
+  // RECORDS
+  "./img/Bandeau1.png",
+  "./img/Bandeau2.png",
+  "./img/Bandeau3.png",
+  "./img/Bandeau4.png",
+					
+  // RECORDS U
+  "./img/BandeauVert.png",
+  "./img/BandeauVert2.png",
+  "./img/BandeauVert3.png",
+  "./img/BandeauVert4.png",
+
+];
+	
+	for(let i=0;i<imgs.length;i++){
+    let img = new Image();
+    img.src = imgs[i];
+  }
+
+}
+					
+					preloadGameImages()
 	</script>
 </body>
 </html>
